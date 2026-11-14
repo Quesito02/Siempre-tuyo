@@ -96,6 +96,11 @@ class DemoBackend {
 }
 
 export function crearBackend() {
-  if (SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase) return new SupabaseBackend();
+  if (SUPABASE_URL && SUPABASE_ANON_KEY) {
+    if (!window.supabase) {
+      return { init: async () => { throw err("No cargó la librería de Supabase. Si usas Brave, baja los escudos para esta página y recarga."); } };
+    }
+    return new SupabaseBackend();
+  }
   return new DemoBackend();
 }
