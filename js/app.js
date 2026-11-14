@@ -433,7 +433,7 @@ async function vistaCartas() {
   }
   const cats = [...new Set(C.cartas.map((c) => c.categoria))];
   app.innerHTML = `${head}<section class="cartas">
-    <h2 class="mano">Hola, ${esc(meta.para)} 💜</h2>
+    <h2 class="mano">Hola, ${esc(meta.para)} 💗</h2>
     ${cats.map((cat) => `<h3>${esc(cat)}</h3><div class="lista">${C.cartas.filter((c) => c.categoria === cat).map((c) => `
       <a class="carta-item" href="#/carta/${encodeURIComponent(c.id)}"><span class="paq-emoji">${c.emoji}</span>
       <span><b>${esc(c.titulo)}</b><small>Toca para leer</small></span><span class="flecha">›</span></a>`).join("")}</div>`).join("")}
