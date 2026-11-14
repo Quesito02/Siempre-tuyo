@@ -204,3 +204,67 @@ textarea { min-height: 140px; resize: vertical; }
 .carta h2 { text-align: center; font-size: 38px; margin: 2px 0 16px; color: #c2185b; }
 .carta p { margin: 0 0 14px; }
 .carta .firma { text-align: right; font-size: 30px; color: #c2185b; margin-top: 20px; }
+
+/* ---------- Siempre tuyo (portada y pestañas) ---------- */
+.titulo-mano { font-size: 64px; line-height: .95; margin: 0; color: var(--acento); transform: rotate(-3deg); }
+.portada { text-align: center; padding: 18px 0 4px; }
+.portada p { color: var(--muted); max-width: 360px; margin: 14px auto 0; font-size: 14.5px; }
+.pill { display: inline-block; background: var(--acento); color: #2a0716; font-weight: 800; font-size: 10.5px; text-transform: uppercase;
+  letter-spacing: .04em; padding: 2px 7px; border-radius: 999px; margin-right: 4px; }
+.icono-vacio { width: 38px; }
+.carta-oscura { position: relative; background: linear-gradient(160deg, #3a1a40, var(--card) 70%); border: 1px solid #ff5fa244; border-radius: 20px;
+  padding: 22px 20px; line-height: 1.7; font-size: 15.5px; }
+.carta-oscura p { margin: 0 0 14px; }
+.carta-oscura .firma { text-align: right; font-size: 34px; color: var(--acento); margin: 6px 0 0; }
+.titulo-carta { font-size: 38px; color: var(--acento); margin: 0 0 12px; line-height: 1; padding-right: 40px; }
+.modal { position: fixed; inset: 0; background: #0a0410cc; display: grid; place-items: center; padding: 16px; z-index: 40; }
+.modal .carta-oscura { width: min(480px, 100%); max-height: 86vh; overflow: auto; background: linear-gradient(160deg, #3a1a40, var(--card) 70%); }
+.modal .cerrar { position: absolute; top: 12px; right: 12px; width: 34px; height: 34px; border-radius: 50%; border: 0; background: var(--card2); }
+.modal .peligro { margin-top: 8px; }
+/* planes */
+.progreso-planes { display: flex; align-items: center; gap: 10px; margin: 10px 0 12px; color: var(--muted); font-size: 13px; }
+.progreso-planes i { flex: 1; height: 7px; border-radius: 7px; background: var(--card2); position: relative; overflow: hidden; }
+.progreso-planes i::after { content: ""; position: absolute; inset: 0; width: var(--p); background: linear-gradient(90deg, #ff5fa2, #c45cff); border-radius: 7px; transition: width .5s; }
+.planes { background: var(--card); border: 1px solid var(--line); border-radius: var(--radio); padding: 4px 14px; }
+.plan { display: flex; align-items: center; gap: 12px; padding: 13px 0; border-bottom: 1px solid var(--line); cursor: pointer; user-select: none; }
+.plan:last-child { border-bottom: 0; }
+.caja { width: 26px; height: 26px; flex: none; border: 2px solid var(--acento); border-radius: 8px; display: grid; place-items: center; transition: background .2s; }
+.caja svg { width: 17px; height: 17px; stroke: #2a0716; stroke-width: 3.4; fill: none; stroke-linecap: round; stroke-linejoin: round;
+  stroke-dasharray: 30; stroke-dashoffset: 30; transition: stroke-dashoffset .35s ease; }
+.plan .txt { flex: 1; display: grid; gap: 2px; }
+.plan .txt > span { position: relative; justify-self: start; transition: color .3s; }
+.plan .txt > span::after { content: ""; position: absolute; left: -2px; top: 54%; height: 2px; width: 0; background: var(--acento); transition: width .4s ease; }
+.plan .txt small { color: var(--muted); font-size: 11.5px; }
+.plan.hecho .caja { background: var(--acento); }
+.plan.hecho .caja svg { stroke-dashoffset: 0; }
+.plan.hecho .txt > span { color: var(--muted); }
+.plan.hecho .txt > span::after { width: calc(100% + 4px); }
+.plan .borrar { background: none; border: 0; color: var(--muted); font-size: 20px; padding: 0 4px; }
+.agregar { display: flex; gap: 8px; }
+.agregar .btn { width: auto; flex: none; padding: 0 18px; }
+/* cápsulas */
+.nueva-cap { margin: 10px 0 4px; }
+.form-cap { display: grid; gap: 10px; margin: 10px 0 4px; padding: 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radio); }
+.form-cap .fila { background: var(--card2); }
+.form-cap input[type=date] { width: auto; padding: 8px 10px; }
+.fila-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+button.capsula { width: 100%; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.ico-cap svg { width: 34px; height: 34px; stroke: var(--c); stroke-width: 2; fill: none; stroke-linecap: round; }
+.capsula.cerrada .ico-cap svg { animation: tiembla 3s infinite; }
+@keyframes tiembla { 0%, 90%, 100% { transform: rotate(0); } 93% { transform: rotate(-10deg); } 96% { transform: rotate(10deg); } }
+.capsula .estado { font-size: 12px; color: var(--muted); }
+/* día a día */
+.dias { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.dia-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radio); padding: 14px 10px; text-align: center; display: grid; justify-items: center; gap: 6px; }
+.dia-card .emoji-grande { font-size: 46px; line-height: 1.1; }
+.dia-card .vacio-emoji { color: var(--line); }
+.dia-card .frase { font-size: 13.5px; }
+.dia-card .vacio { color: var(--muted); font-size: 12.5px; font-style: italic; padding: 0; }
+.emojis { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.emojis button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); font-size: 22px; padding: 0; }
+.emojis button.sel { border-color: var(--acento); background: #3b1f4e; }
+.hist-dia { align-items: flex-start; }
+.hist-dia b { font-weight: 600; font-size: 13.5px; }
+.hist-dia small { color: var(--muted); font-weight: 400; }
+
+[hidden] { display: none !important; }

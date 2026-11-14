@@ -16,6 +16,7 @@ class SupabaseBackend {
     const { data, error } = await this.sb.rpc(fn, args);
     if (error) throw err(error.message);
     if (data && data.error) throw err(data.error);
+    if (data && data.id && data.jugador) this.yo = { pareja_id: data.id, jugador: data.jugador };
     return data;
   }
   async init() {
@@ -49,10 +50,30 @@ class SupabaseBackend {
     return out;
   }
   async salir() { await this.sb.auth.signOut(); }
+
+  // ---- "Siempre tuyo" (tabla rincon) ----
+  async listarRincon() {
+    const { data, error } = await this.sb.from("rincon").select("*").order("creada_en");
+    if (error) throw err(error.message); return data;
+  }
+  async capsulas() { return (await this.rpc("capsulas")) || []; }
+  async crearRincon(f) {
+    const { data, error } = await this.sb.from("rincon").insert({ ...this.yo, ...f }).select().single();
+    if (error) throw err(error.message); return data;
+  }
+  async guardarRincon(f) {
+    const { data, error } = await this.sb.from("rincon").upsert({ ...this.yo, ...f }, { onConflict: "pareja_id,jugador,tipo,clave" }).select().single();
+    if (error) throw err(error.message); return data;
+  }
+  async borrarRincon(id) {
+    const { error } = await this.sb.from("rincon").delete().eq("id", id);
+    if (error) throw err(error.message);
+  }
 }
 
 // ---------- Modo demo (localStorage) ----------
 const KEY = "nosotros-demo-v1";
+const KEY_R = "nosotros-rincon-demo";
 function leer() { try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch { return {}; } }
 function guardar(d) { try { localStorage.setItem(KEY, JSON.stringify(d)); } catch {} }
 
@@ -92,7 +113,32 @@ class DemoBackend {
     if (!r[yo]) return {};
     return r;
   }
-  async salir() { try { localStorage.removeItem(KEY); } catch {} }
+  async salir() { try { localStorage.removeItem(KEY); localStorage.removeItem(KEY_R); } catch {} }
+
+  // ---- "Siempre tuyo" (simulado en este navegador) ----
+  _r() { try { return JSON.parse(localStorage.getItem(KEY_R)) || []; } catch { return []; } }
+  _w(v) { try { localStorage.setItem(KEY_R, JSON.stringify(v)); } catch {} }
+  _yo() { return leer().activo || 1; }
+  async listarRincon() {
+    const yo = this._yo();
+    return this._r().filter((r) => r.tipo !== "capsula" || r.jugador === yo || new Date(r.abre_en) <= new Date());
+  }
+  async capsulas() {
+    return this._r().filter((r) => r.tipo === "capsula").map(({ id, jugador, titulo, abre_en, creada_en }) => ({ id, jugador, titulo, abre_en, creada_en }))
+      .sort((a, b) => a.abre_en.localeCompare(b.abre_en));
+  }
+  async crearRincon(f) {
+    const v = this._r(), yo = this._yo();
+    if (v.some((r) => r.jugador === yo && r.tipo === f.tipo && r.clave === f.clave)) throw err("Ya existe");
+    const r = { id: crypto.randomUUID(), jugador: yo, datos: {}, creada_en: new Date().toISOString(), ...f };
+    v.push(r); this._w(v); return r;
+  }
+  async guardarRincon(f) {
+    const v = this._r(), yo = this._yo(), i = v.findIndex((r) => r.jugador === yo && r.tipo === f.tipo && r.clave === f.clave);
+    if (i < 0) return this.crearRincon(f);
+    v[i] = { ...v[i], ...f }; this._w(v); return v[i];
+  }
+  async borrarRincon(id) { this._w(this._r().filter((r) => r.id !== id)); }
 }
 
 export function crearBackend() {

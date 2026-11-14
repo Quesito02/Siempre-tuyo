@@ -1,5 +1,6 @@
 import { crearBackend } from "./backend.js";
 import { NOMBRE_APP, ZONA_UTC } from "./config.js";
+import { crearRincon } from "./rincon.js";
 
 const TIPOS = {
   nunca:     { label: "Yo nunca nunca",          corto: "Nunca he",            emoji: "😝" },
@@ -35,6 +36,7 @@ function avatar(j, opts = {}) {
   return `<span class="av av${j} ${opts.sm ? "sm" : ""}" title="${esc(n)}">${esc(n.trim()[0]?.toUpperCase() || "?")}${check}</span>`;
 }
 function toast(msg) {
+  document.querySelectorAll(".toast").forEach((x) => x.remove());
   const t = document.createElement("div"); t.className = "toast"; t.textContent = msg;
   document.body.appendChild(t); setTimeout(() => t.remove(), 3200);
 }
@@ -86,16 +88,21 @@ const rutas = [
   [/^#\/jugar\/(.+)$/, (id) => vistaJugar(id)],
   [/^#\/resultado\/(.+)$/, (id) => vistaResultado(id)],
   [/^#\/ajustes$/, () => vistaAjustes()],
-  [/^#\/cartas?(\/.*)?$/, () => { location.href = "valentina.html"; }],
+  [/^#\/preguntas$/, () => vistaHome()],
+  [/^#\/planes$/, () => R.vistaPlanes()],
+  [/^#\/capsulas$/, () => R.vistaCapsulas()],
+  [/^#\/dia$/, () => R.vistaDia()],
+  [/^#\/cartas?(\/.*)?$/, () => ir("#/capsulas")],
 ];
 async function render() {
+  document.body.classList.remove("papel");
   if (!S.info) return vistaBienvenida();
   const h = location.hash || "#/";
   for (const [re, fn] of rutas) {
     const m = h.match(re);
     if (m) return fn(decodeURIComponent(m[1] || ""));
   }
-  return vistaHome();
+  return R.vistaPortada();
 }
 window.addEventListener("hashchange", () => { window.scrollTo(0, 0); render(); });
 const ir = (h) => { if (location.hash === h) render(); else location.hash = h; };
@@ -145,14 +152,14 @@ function vistaBienvenida(modo = "inicio") {
       if (f.dataset.accion === "crear") S.info = await be.crearPareja(v.nombre.trim(), v.pin, v.nombre2?.trim());
       if (f.dataset.accion === "unirse") S.info = await be.unirse(v.codigo.trim().toUpperCase(), v.nombre.trim(), v.pin);
       if (f.dataset.accion === "recuperar") S.info = await be.recuperar(v.codigo.trim().toUpperCase(), v.nombre.trim(), v.pin);
-      await refrescarEstado(); ir("#/");
+      await refrescarEstado(); await R.alEntrar(); ir("#/");
     } catch (x) { toast(x.message); btn.disabled = false; }
   };
 }
 
 function cabecera() {
   return `<header class="top">
-    <div class="pareja">${avatar(1)}${avatar(2)}</div>
+    <div class="top-der"><a class="icono" href="#/" aria-label="Inicio">‹</a><div class="pareja">${avatar(1)}${avatar(2)}</div></div>
     <div class="top-der">
       ${be.demo ? `<button class="chip demo" id="cambiar">Jugando como ${esc(nombre(yo()))} ⇄</button>` : ""}
       <a class="icono" href="#/ajustes" aria-label="Ajustes">⚙️</a>
@@ -209,7 +216,6 @@ function vistaHome() {
   app.innerHTML = `${cabecera()}
     <nav class="chips">${filtros.map(([k, t]) => `<button class="chip ${S.filtroHome === k ? "on" : ""}" data-f="${k}">${t}</button>`).join("")}</nav>
     ${invitar}
-    ${tarjetaCartas()}
     <h3>Conversación diaria gratuita</h3>
     <a class="paq t-profunda diaria" href="#/${sitD === "listo" || sitD === "esperando" ? "resultado" : "jugar"}/${d.id}">
       <div class="paq-info">
@@ -232,7 +238,7 @@ function vistaLista({ tema, tipo }) {
   let titulo, paquetes;
   if (tema) {
     const t = S.data.temas.find((x) => x.id === tema);
-    if (!t) return ir("#/");
+    if (!t) return ir("#/preguntas");
     titulo = `${t.emoji} ${t.nombre}`; paquetes = t.paquetes;
   } else {
     titulo = `${TIPOS[tipo]?.emoji} ${TIPOS[tipo]?.label}`; paquetes = paquetesVisibles().filter((p) => p.tipo === tipo);
@@ -240,7 +246,7 @@ function vistaLista({ tema, tipo }) {
   const filtros = [["todos", "Todos"], ["sin", "Sin responder"], ["resp", "Respondidos"]];
   const f = S.filtroLista;
   const lista = paquetes.filter((p) => f === "todos" || (f === "sin" ? !respondio(p.id, yo()) : respondio(p.id, yo())));
-  app.innerHTML = `<header class="top"><a class="icono" href="#/">‹</a><b class="titulo-top">${esc(titulo)}</b><span></span></header>
+  app.innerHTML = `<header class="top"><a class="icono" href="#/preguntas">‹</a><b class="titulo-top">${esc(titulo)}</b><span></span></header>
     <nav class="chips">${filtros.map(([k, t]) => `<button class="chip ${f === k ? "on" : ""}" data-f="${k}">${t}</button>`).join("")}</nav>
     <div class="lista">${lista.map(tarjetaPaquete).join("") || `<p class="vacio">Nada por aquí.</p>`}</div>`;
   app.querySelectorAll("[data-f]").forEach((b) => b.onclick = () => { S.filtroLista = b.dataset.f; vistaLista({ tema, tipo }); });
@@ -250,7 +256,7 @@ function vistaLista({ tema, tipo }) {
 function textoPregunta(p, q) { return p.tipo === "profunda" ? q.q : p.tipo === "prefieres" ? "¿Qué prefieres?" : q; }
 function vistaJugar(id) {
   const p = S.paquetes.get(id) || (id.startsWith("diaria-") ? diaria() : null);
-  if (!p) return ir("#/");
+  if (!p) return ir("#/preguntas");
   if (respondio(id, yo())) return ir("#/resultado/" + id);
   if (!S.juego || S.juego.id !== id) S.juego = { id, i: 0, r: [] };
   const J = S.juego, q = p.preguntas[J.i], total = p.preguntas.length;
@@ -264,7 +270,7 @@ function vistaJugar(id) {
                    <button class="btn" id="sig">${J.i === total - 1 ? "Enviar" : "Siguiente"}</button>`;
   const elegido = J.r[J.i];
   app.innerHTML = `<header class="top"><button class="icono" id="atras">‹</button>
-      <b class="titulo-top">${esc(p.titulo)}</b><a class="icono" href="#/">✕</a></header>
+      <b class="titulo-top">${esc(p.titulo)}</b><a class="icono" href="#/preguntas">✕</a></header>
     <div class="barra"><i style="width:${(J.i / total) * 100}%"></i></div>
     <section class="jugar t-${p.tipo}">
       <div class="contador">${J.i + 1} / ${total} · ${esc(TIPOS[p.tipo].label)}</div>
@@ -323,11 +329,11 @@ const PISTAS = {
 };
 async function vistaResultado(id) {
   const p = S.paquetes.get(id) || (id.startsWith("diaria-") ? diaria() : null);
-  if (!p) return ir("#/");
+  if (!p) return ir("#/preguntas");
   if (!respondio(id, yo())) return ir("#/jugar/" + id);
   const r = await be.resultados(id);
   const mio = r[yo()], suyo = r[otro()];
-  const head = `<header class="top"><a class="icono" href="#/">‹</a><b class="titulo-top">${esc(p.titulo)}</b><span></span></header>`;
+  const head = `<header class="top"><a class="icono" href="#/preguntas">‹</a><b class="titulo-top">${esc(p.titulo)}</b><span></span></header>`;
   if (!suyo) {
     app.innerHTML = `${head}<section class="esperando">
       <div class="reloj-arena">⏳</div><h2>Esperando a ${esc(nombre(otro()))}</h2>
@@ -372,23 +378,13 @@ async function vistaResultado(id) {
   app.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => { S.tabResultado = b.dataset.t; vistaResultado(id); });
 }
 
-// ---------- acceso a "Siempre tuyo" (valentina.html) ----------
-// El contenido personal está cifrado en data/cartas.json; la página valentina.html pide el código y lo descifra.
-const C = { meta: null };
-async function cargarMetaCartas() {
-  if (C.meta !== null) return C.meta;
-  try { const r = await fetch("data/cartas.json", { cache: "no-cache" }); C.meta = r.ok ? await r.json() : false; }
-  catch { C.meta = false; }
-  return C.meta;
-}
-function tarjetaCartas() {
-  if (!C.meta) return "";
-  let abierto = false; try { abierto = !!sessionStorage.getItem("nosotros-cartas"); } catch {}
-  return `<a class="cartas-card" href="valentina.html">
-    <span class="sobre">💌</span>
-    <span><small>Solo para ti</small><b>Para ${esc(C.meta.para || "ti")}</b></span>
-    <span class="candado">${abierto ? "›" : "🔒"}</span></a>`;
-}
+// ---------- "Siempre tuyo": portada, planes, cápsulas y día a día (js/rincon.js) ----------
+const R = crearRincon({
+  app, be, esc, toast, ir, nombre, yo, otro,
+  info: () => S.info,
+  cambiarJugador: () => { S.info = be.cambiarJugador(); render(); },
+  pendientesQuiz: () => (S.data ? paquetesVisibles().filter((p) => situacion(p.id) === "tuturno").length : 0),
+});
 
 // ---------- ajustes ----------
 function vistaAjustes() {
@@ -397,11 +393,13 @@ function vistaAjustes() {
       <div class="fila"><span>Código de la pareja</span><b class="codigo sm">${esc(S.info.codigo)}</b></div>
       <div class="fila"><span>Tú</span><b>${esc(nombre(yo()))}</b></div>
       <div class="fila"><span>Tu pareja</span><b>${esc(nombre(otro()))}</b></div>
+      <button class="fila" id="olvidar" style="width:100%;font:inherit;color:inherit;cursor:pointer"><span>Pedir el código otra vez en este celular</span><b>›</b></button>
       <label class="fila"><span>Mostrar temas 18+</span><input type="checkbox" id="adultos" ${verAdultos() ? "checked" : ""}></label>
       ${be.demo ? `<div class="aviso">Estás en modo demo. Cuando conectes Supabase, cada uno juega desde su celular.</div>` : ""}
       <button class="btn sec peligro" id="salir">${be.demo ? "Borrar datos de prueba" : "Cerrar sesión en este celular"}</button>
       ${be.demo ? "" : `<p class="nota">Para volver a entrar necesitarás el código, tu nombre y tu PIN.</p>`}
     </section>`;
+  document.getElementById("olvidar").onclick = () => { R.olvidarCodigo(); toast("Listo, se pedirá el código"); ir("#/"); };
   document.getElementById("adultos").onchange = (e) => ls.set("nosotros-adultos", e.target.checked);
   document.getElementById("salir").onclick = async () => {
     await be.salir(); S.info = null; S.estado = new Map();
@@ -419,7 +417,7 @@ async function arrancar() {
     for (const t of S.data.temas) for (const p of t.paquetes) { S.paquetes.set(p.id, p); S.temaDe.set(p.id, t); }
     S.info = await be.init();
     if (S.info) await refrescarEstado();
-    await cargarMetaCartas();
+    await R.cargar();
   } catch (x) {
     app.innerHTML = `<section class="bienvenida"><div class="logo">⚠️</div><h2>No se pudo cargar</h2><p class="sub">${esc(x.message)}</p>
       <button class="btn" onclick="location.reload()">Reintentar</button></section>`;
@@ -430,13 +428,14 @@ async function arrancar() {
   setInterval(() => { const r = document.getElementById("reloj"); if (r) r.textContent = faltaParaMedianoche(); }, 1000);
   const actualizar = async () => {
     if (!S.info || document.hidden || location.hash.startsWith("#/jugar")) return;
+    if (R.esSuya(location.hash)) return R.actualizar();
     const foto = () => JSON.stringify([S.info?.miembros, [...S.estado].map(([k, v]) => [k, [...v]])]);
     const antes = foto();
     try {
       if (!parejaCompleta()) S.info = (await be.info()) || S.info;
       await refrescarEstado();
     } catch { return; }
-    if (antes !== foto() && !location.hash.startsWith("#/ajustes")) render();
+    if (antes !== foto() && /^#\/(preguntas|tema|tipo|resultado)/.test(location.hash)) render();
   };
   setInterval(actualizar, 15000);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) actualizar(); });
