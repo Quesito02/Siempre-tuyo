@@ -79,14 +79,38 @@
           "emoji": "⚖️",
           "tipo": "prefieres",
           "preguntas": [
-            { "a": "🍿 Maratón de películas en casa", "b": "🎉 Salir de rumba" },
-            { "a": "🌄 Madrugar a hacer algo", "b": "😴 Dormir hasta tarde" },
-            { "a": "🍕 Pedir domicilio", "b": "👩‍🍳 Cocinar juntos" },
-            { "a": "🏞️ Paseo a la naturaleza", "b": "🏙️ Recorrer la ciudad" },
-            { "a": "👨‍👩‍👧 Almuerzo en familia", "b": "🥂 Plan solo nosotros dos" },
-            { "a": "🎮 Videojuegos", "b": "🎲 Juegos de mesa" },
-            { "a": "📵 Un día sin celular", "b": "📸 Documentar todo el día" },
-            { "a": "🍦 Postre antes de comer", "b": "🥗 Comida primero, postre después" }
+            {
+              "a": "🍿 Maratón de películas en casa",
+              "b": "🎉 Salir de rumba"
+            },
+            {
+              "a": "🌄 Madrugar a hacer algo",
+              "b": "😴 Dormir hasta tarde"
+            },
+            {
+              "a": "🍕 Pedir domicilio",
+              "b": "👩‍🍳 Cocinar juntos"
+            },
+            {
+              "a": "🏞️ Paseo a la naturaleza",
+              "b": "🏙️ Recorrer la ciudad"
+            },
+            {
+              "a": "👨‍👩‍👧 Almuerzo en familia",
+              "b": "🥂 Plan solo nosotros dos"
+            },
+            {
+              "a": "🎮 Videojuegos",
+              "b": "🎲 Juegos de mesa"
+            },
+            {
+              "a": "📵 Un día sin celular",
+              "b": "📸 Documentar todo el día"
+            },
+            {
+              "a": "🍦 Postre antes de comer",
+              "b": "🥗 Comida primero, postre después"
+            }
           ]
         },
         {
@@ -95,14 +119,55 @@
           "emoji": "💬",
           "tipo": "profunda",
           "preguntas": [
-            { "q": "¿Cuál es tu forma favorita de pasar una tarde libre?", "op": ["Durmiendo", "Viendo series", "Saliendo", "Con amigos"] },
-            { "q": "¿Qué te pone de buen humor más rápido?", "op": ["Comida rica", "Música", "Un abrazo", "Dormir bien"] },
-            { "q": "¿Cuál es tu lenguaje del amor principal?", "op": ["Palabras bonitas", "Tiempo juntos", "Detalles y regalos", "Contacto físico", "Ayudarnos en cosas"] },
-            { "q": "¿Qué emoji usas más conmigo?" },
-            { "q": "¿Qué es lo que más te gusta de nuestras conversaciones?" },
-            { "q": "Si nuestra relación fuera una canción, ¿cuál sería?" },
-            { "q": "¿Cómo prefieres resolver una pelea?", "op": ["Hablarlo de una", "Tomar espacio y luego hablar", "Por mensaje", "Con un abrazo primero"] },
-            { "q": "¿Qué plan sencillo te hace sentir más cerca de mí?" }
+            {
+              "q": "¿Cuál es tu forma favorita de pasar una tarde libre?",
+              "op": [
+                "Durmiendo",
+                "Viendo series",
+                "Saliendo",
+                "Con amigos"
+              ]
+            },
+            {
+              "q": "¿Qué te pone de buen humor más rápido?",
+              "op": [
+                "Comida rica",
+                "Música",
+                "Un abrazo",
+                "Dormir bien"
+              ]
+            },
+            {
+              "q": "¿Cuál es tu lenguaje del amor principal?",
+              "op": [
+                "Palabras bonitas",
+                "Tiempo juntos",
+                "Detalles y regalos",
+                "Contacto físico",
+                "Ayudarnos en cosas"
+              ]
+            },
+            {
+              "q": "¿Qué emoji usas más conmigo?"
+            },
+            {
+              "q": "¿Qué es lo que más te gusta de nuestras conversaciones?"
+            },
+            {
+              "q": "Si nuestra relación fuera una canción, ¿cuál sería?"
+            },
+            {
+              "q": "¿Cómo prefieres resolver una pelea?",
+              "op": [
+                "Hablarlo de una",
+                "Tomar espacio y luego hablar",
+                "Por mensaje",
+                "Con un abrazo primero"
+              ]
+            },
+            {
+              "q": "¿Qué plan sencillo te hace sentir más cerca de mí?"
+            }
           ]
         }
       ]
@@ -136,14 +201,48 @@
           "emoji": "📱",
           "tipo": "profunda",
           "preguntas": [
-            { "q": "¿Qué es lo más difícil de estar lejos?", "op": ["No poder abrazarnos", "La diferencia de horarios", "No compartir planes", "Las inseguridades"] },
-            { "q": "¿Cómo prefieres que estemos en contacto?", "op": ["Mensajes todo el día", "Una llamada larga en la noche", "Videollamadas", "Notas de voz"] },
-            { "q": "¿Qué es lo primero que quieres hacer la próxima vez que nos veamos?" },
-            { "q": "¿Qué te ayuda a sentirme cerca aunque no esté?" },
-            { "q": "¿Cada cuánto te gustaría que nos viéramos?", "op": ["Cada fin de semana", "Cada quince días", "Una vez al mes", "Lo que se pueda"] },
-            { "q": "¿Qué plan podríamos hacer juntos a distancia?" },
-            { "q": "¿Qué te da más confianza en nosotros?" },
-            { "q": "¿Cómo te imaginas el día en que ya no haya distancia?" }
+            {
+              "q": "¿Qué es lo más difícil de estar lejos?",
+              "op": [
+                "No poder abrazarnos",
+                "La diferencia de horarios",
+                "No compartir planes",
+                "Las inseguridades"
+              ]
+            },
+            {
+              "q": "¿Cómo prefieres que estemos en contacto?",
+              "op": [
+                "Mensajes todo el día",
+                "Una llamada larga en la noche",
+                "Videollamadas",
+                "Notas de voz"
+              ]
+            },
+            {
+              "q": "¿Qué es lo primero que quieres hacer la próxima vez que nos veamos?"
+            },
+            {
+              "q": "¿Qué te ayuda a sentirme cerca aunque no esté?"
+            },
+            {
+              "q": "¿Cada cuánto te gustaría que nos viéramos?",
+              "op": [
+                "Cada fin de semana",
+                "Cada quince días",
+                "Una vez al mes",
+                "Lo que se pueda"
+              ]
+            },
+            {
+              "q": "¿Qué plan podríamos hacer juntos a distancia?"
+            },
+            {
+              "q": "¿Qué te da más confianza en nosotros?"
+            },
+            {
+              "q": "¿Cómo te imaginas el día en que ya no haya distancia?"
+            }
           ]
         },
         {
@@ -152,14 +251,38 @@
           "emoji": "🥂",
           "tipo": "prefieres",
           "preguntas": [
-            { "a": "🕯️ Cena elegante", "b": "🌭 Comida callejera" },
-            { "a": "🎬 Cine", "b": "🎤 Karaoke" },
-            { "a": "🌅 Ver el atardecer", "b": "🌌 Ver las estrellas" },
-            { "a": "🎁 Que me sorprendas", "b": "🗓️ Planearlo juntos" },
-            { "a": "🚗 Paseo en carro sin rumbo", "b": "🚶 Caminar por el parque" },
-            { "a": "💃 Clase de baile", "b": "🎨 Clase de pintura" },
-            { "a": "🏠 Cita en casa con velitas", "b": "🎡 Parque de diversiones" },
-            { "a": "💌 Una carta escrita a mano", "b": "🎶 Una playlist hecha para mí" }
+            {
+              "a": "🕯️ Cena elegante",
+              "b": "🌭 Comida callejera"
+            },
+            {
+              "a": "🎬 Cine",
+              "b": "🎤 Karaoke"
+            },
+            {
+              "a": "🌅 Ver el atardecer",
+              "b": "🌌 Ver las estrellas"
+            },
+            {
+              "a": "🎁 Que me sorprendas",
+              "b": "🗓️ Planearlo juntos"
+            },
+            {
+              "a": "🚗 Paseo en carro sin rumbo",
+              "b": "🚶 Caminar por el parque"
+            },
+            {
+              "a": "💃 Clase de baile",
+              "b": "🎨 Clase de pintura"
+            },
+            {
+              "a": "🏠 Cita en casa con velitas",
+              "b": "🎡 Parque de diversiones"
+            },
+            {
+              "a": "💌 Una carta escrita a mano",
+              "b": "🎶 Una playlist hecha para mí"
+            }
           ]
         },
         {
@@ -168,12 +291,24 @@
           "emoji": "🫶",
           "tipo": "profunda",
           "preguntas": [
-            { "q": "¿En qué momento supiste que te gustaba de verdad?" },
-            { "q": "¿Qué crees que nos hace un buen equipo?" },
-            { "q": "¿Qué aprendiste de ti gracias a esta relación?" },
-            { "q": "¿Qué es algo que quieres que nunca cambie entre nosotros?" },
-            { "q": "¿Qué promesa te gustaría hacerme?" },
-            { "q": "¿Qué parte de nuestra historia le contarías a alguien?" }
+            {
+              "q": "¿En qué momento supiste que te gustaba de verdad?"
+            },
+            {
+              "q": "¿Qué crees que nos hace un buen equipo?"
+            },
+            {
+              "q": "¿Qué aprendiste de ti gracias a esta relación?"
+            },
+            {
+              "q": "¿Qué es algo que quieres que nunca cambie entre nosotros?"
+            },
+            {
+              "q": "¿Qué promesa te gustaría hacerme?"
+            },
+            {
+              "q": "¿Qué parte de nuestra historia le contarías a alguien?"
+            }
           ]
         }
       ]
@@ -207,14 +342,54 @@
           "emoji": "🍕",
           "tipo": "profunda",
           "preguntas": [
-            { "q": "¿Cuál es tu comida favorita?", "op": ["Comida rápida", "Comida típica", "Sushi o asiática", "Pasta o italiana"] },
-            { "q": "¿Qué género de música escuchas más?", "op": ["Reguetón", "Salsa", "Pop", "Rock", "Vallenato"] },
-            { "q": "¿Eres más de día o de noche?", "op": ["De día", "De noche", "Depende"] },
-            { "q": "¿Cuál es tu manía más rara?" },
-            { "q": "¿Qué es lo que menos soportas en una persona?" },
-            { "q": "¿Qué te gustaría hacer si no tuvieras miedo?" },
-            { "q": "¿Perro o gato?", "op": ["Perro", "Gato", "Los dos", "Ninguno"] },
-            { "q": "¿Cuál es tu película favorita de todos los tiempos?" }
+            {
+              "q": "¿Cuál es tu comida favorita?",
+              "op": [
+                "Comida rápida",
+                "Comida típica",
+                "Sushi o asiática",
+                "Pasta o italiana"
+              ]
+            },
+            {
+              "q": "¿Qué género de música escuchas más?",
+              "op": [
+                "Reguetón",
+                "Salsa",
+                "Pop",
+                "Rock",
+                "Vallenato"
+              ]
+            },
+            {
+              "q": "¿Eres más de día o de noche?",
+              "op": [
+                "De día",
+                "De noche",
+                "Depende"
+              ]
+            },
+            {
+              "q": "¿Cuál es tu manía más rara?"
+            },
+            {
+              "q": "¿Qué es lo que menos soportas en una persona?"
+            },
+            {
+              "q": "¿Qué te gustaría hacer si no tuvieras miedo?"
+            },
+            {
+              "q": "¿Perro o gato?",
+              "op": [
+                "Perro",
+                "Gato",
+                "Los dos",
+                "Ninguno"
+              ]
+            },
+            {
+              "q": "¿Cuál es tu película favorita de todos los tiempos?"
+            }
           ]
         },
         {
@@ -223,14 +398,38 @@
           "emoji": "🤔",
           "tipo": "prefieres",
           "preguntas": [
-            { "a": "🔮 Saber el futuro", "b": "⏪ Cambiar el pasado" },
-            { "a": "🦸 Volar", "b": "🫥 Ser invisible" },
-            { "a": "💰 Ser millonario(a) sin amor", "b": "❤️ Amor sin plata" },
-            { "a": "🧠 Leer mentes", "b": "🗣️ Hablar todos los idiomas" },
-            { "a": "🏖️ Vivir en la playa", "b": "🏔️ Vivir en la montaña" },
-            { "a": "📵 Un año sin redes", "b": "🍔 Un año sin comida rápida" },
-            { "a": "🎤 Cantar increíble", "b": "💃 Bailar increíble" },
-            { "a": "⏰ Siempre llegar tarde 10 min", "b": "⌛ Siempre llegar 20 min antes" }
+            {
+              "a": "🔮 Saber el futuro",
+              "b": "⏪ Cambiar el pasado"
+            },
+            {
+              "a": "🦸 Volar",
+              "b": "🫥 Ser invisible"
+            },
+            {
+              "a": "💰 Ser millonario(a) sin amor",
+              "b": "❤️ Amor sin plata"
+            },
+            {
+              "a": "🧠 Leer mentes",
+              "b": "🗣️ Hablar todos los idiomas"
+            },
+            {
+              "a": "🏖️ Vivir en la playa",
+              "b": "🏔️ Vivir en la montaña"
+            },
+            {
+              "a": "📵 Un año sin redes",
+              "b": "🍔 Un año sin comida rápida"
+            },
+            {
+              "a": "🎤 Cantar increíble",
+              "b": "💃 Bailar increíble"
+            },
+            {
+              "a": "⏰ Siempre llegar tarde 10 min",
+              "b": "⌛ Siempre llegar 20 min antes"
+            }
           ]
         }
       ]
@@ -246,14 +445,38 @@
           "emoji": "🌍",
           "tipo": "prefieres",
           "preguntas": [
-            { "a": "🏝️ San Andrés", "b": "🏰 Cartagena" },
-            { "a": "🗼 París", "b": "🗽 Nueva York" },
-            { "a": "🏕️ Camping", "b": "🏨 Hotel todo incluido" },
-            { "a": "✈️ Vuelo largo a otro continente", "b": "🚌 Road trip por el país" },
-            { "a": "📋 Itinerario planeado", "b": "🎒 Improvisar todo" },
-            { "a": "🍜 Probar comida rara", "b": "🍗 Lo de siempre" },
-            { "a": "❄️ Ver nieve", "b": "🌋 Ver un volcán" },
-            { "a": "🛍️ Viaje de compras", "b": "🏛️ Viaje de museos" }
+            {
+              "a": "🏝️ San Andrés",
+              "b": "🏰 Cartagena"
+            },
+            {
+              "a": "🗼 París",
+              "b": "🗽 Nueva York"
+            },
+            {
+              "a": "🏕️ Camping",
+              "b": "🏨 Hotel todo incluido"
+            },
+            {
+              "a": "✈️ Vuelo largo a otro continente",
+              "b": "🚌 Road trip por el país"
+            },
+            {
+              "a": "📋 Itinerario planeado",
+              "b": "🎒 Improvisar todo"
+            },
+            {
+              "a": "🍜 Probar comida rara",
+              "b": "🍗 Lo de siempre"
+            },
+            {
+              "a": "❄️ Ver nieve",
+              "b": "🌋 Ver un volcán"
+            },
+            {
+              "a": "🛍️ Viaje de compras",
+              "b": "🏛️ Viaje de museos"
+            }
           ]
         },
         {
@@ -305,14 +528,59 @@
           "emoji": "🔑",
           "tipo": "profunda",
           "preguntas": [
-            { "q": "¿Dónde te gustaría que viviéramos?", "op": ["En la ciudad", "En un pueblo", "Cerca del mar", "En otro país"] },
-            { "q": "¿Casa o apartamento?", "op": ["Casa", "Apartamento", "Me da igual"] },
-            { "q": "¿Cómo repartiríamos los oficios?", "op": ["Mitad y mitad", "Cada uno lo que le gusta", "Turnos por semana", "Contratamos a alguien"] },
-            { "q": "¿Qué mascota tendríamos?", "op": ["Perro", "Gato", "Ambos", "Ninguna"] },
-            { "q": "¿Cuál sería tu espacio favorito de la casa?" },
-            { "q": "¿Qué es lo que más te ilusiona de vivir juntos?" },
-            { "q": "¿Qué te preocupa de vivir juntos?" },
-            { "q": "¿Cómo decoraríamos la casa?", "op": ["Minimalista", "Llena de plantas", "Colorida", "Moderna"] }
+            {
+              "q": "¿Dónde te gustaría que viviéramos?",
+              "op": [
+                "En la ciudad",
+                "En un pueblo",
+                "Cerca del mar",
+                "En otro país"
+              ]
+            },
+            {
+              "q": "¿Casa o apartamento?",
+              "op": [
+                "Casa",
+                "Apartamento",
+                "Me da igual"
+              ]
+            },
+            {
+              "q": "¿Cómo repartiríamos los oficios?",
+              "op": [
+                "Mitad y mitad",
+                "Cada uno lo que le gusta",
+                "Turnos por semana",
+                "Contratamos a alguien"
+              ]
+            },
+            {
+              "q": "¿Qué mascota tendríamos?",
+              "op": [
+                "Perro",
+                "Gato",
+                "Ambos",
+                "Ninguna"
+              ]
+            },
+            {
+              "q": "¿Cuál sería tu espacio favorito de la casa?"
+            },
+            {
+              "q": "¿Qué es lo que más te ilusiona de vivir juntos?"
+            },
+            {
+              "q": "¿Qué te preocupa de vivir juntos?"
+            },
+            {
+              "q": "¿Cómo decoraríamos la casa?",
+              "op": [
+                "Minimalista",
+                "Llena de plantas",
+                "Colorida",
+                "Moderna"
+              ]
+            }
           ]
         },
         {
@@ -321,14 +589,53 @@
           "emoji": "💸",
           "tipo": "profunda",
           "preguntas": [
-            { "q": "¿Cómo manejaríamos la plata?", "op": ["Todo junto", "Cada uno lo suyo", "Una cuenta común para gastos"] },
-            { "q": "¿Eres más ahorrador(a) o gastador(a)?", "op": ["Ahorrador(a)", "Gastador(a)", "Equilibrado(a)"] },
-            { "q": "¿En qué vale la pena gastar plata?", "op": ["Viajes", "Comida", "Ropa", "Tecnología", "Experiencias"] },
-            { "q": "¿Cuál es una meta económica que quieras cumplir?" },
-            { "q": "¿Te gustaría tener un negocio propio?", "op": ["Sí", "No", "Ya tengo uno", "Tal vez"] },
-            { "q": "¿Qué harías si nos ganáramos la lotería?" },
-            { "q": "¿Qué compra grande te gustaría hacer en los próximos años?" },
-            { "q": "¿Cómo te enseñaron a manejar la plata en tu casa?" }
+            {
+              "q": "¿Cómo manejaríamos la plata?",
+              "op": [
+                "Todo junto",
+                "Cada uno lo suyo",
+                "Una cuenta común para gastos"
+              ]
+            },
+            {
+              "q": "¿Eres más ahorrador(a) o gastador(a)?",
+              "op": [
+                "Ahorrador(a)",
+                "Gastador(a)",
+                "Equilibrado(a)"
+              ]
+            },
+            {
+              "q": "¿En qué vale la pena gastar plata?",
+              "op": [
+                "Viajes",
+                "Comida",
+                "Ropa",
+                "Tecnología",
+                "Experiencias"
+              ]
+            },
+            {
+              "q": "¿Cuál es una meta económica que quieras cumplir?"
+            },
+            {
+              "q": "¿Te gustaría tener un negocio propio?",
+              "op": [
+                "Sí",
+                "No",
+                "Ya tengo uno",
+                "Tal vez"
+              ]
+            },
+            {
+              "q": "¿Qué harías si nos ganáramos la lotería?"
+            },
+            {
+              "q": "¿Qué compra grande te gustaría hacer en los próximos años?"
+            },
+            {
+              "q": "¿Cómo te enseñaron a manejar la plata en tu casa?"
+            }
           ]
         },
         {
@@ -353,7 +660,7 @@
     },
     {
       "id": "picante",
-      "nombre": "Picante",
+      "nombre": "Picante 18+",
       "emoji": "🌶️",
       "adultos": true,
       "paquetes": [
@@ -363,14 +670,38 @@
           "emoji": "🔥",
           "tipo": "prefieres",
           "preguntas": [
-            { "a": "🌙 De noche", "b": "☀️ En la mañana" },
-            { "a": "🕯️ Romántico y lento", "b": "⚡ Espontáneo" },
-            { "a": "💬 Que me lo digas", "b": "👀 Que me lo demuestres" },
-            { "a": "💋 Besos en el cuello", "b": "🤲 Masajes" },
-            { "a": "🏠 En casa", "b": "🏨 En un hotel" },
-            { "a": "📩 Mensajes atrevidos", "b": "📞 Llamada atrevida" },
-            { "a": "🎶 Con música", "b": "🤫 En silencio" },
-            { "a": "🎁 Lencería sorpresa", "b": "🛁 Baño juntos" }
+            {
+              "a": "🌙 De noche",
+              "b": "☀️ En la mañana"
+            },
+            {
+              "a": "🕯️ Romántico y lento",
+              "b": "⚡ Espontáneo"
+            },
+            {
+              "a": "💬 Que me lo digas",
+              "b": "👀 Que me lo demuestres"
+            },
+            {
+              "a": "💋 Besos en el cuello",
+              "b": "🤲 Masajes"
+            },
+            {
+              "a": "🏠 En casa",
+              "b": "🏨 En un hotel"
+            },
+            {
+              "a": "📩 Mensajes atrevidos",
+              "b": "📞 Llamada atrevida"
+            },
+            {
+              "a": "🎶 Con música",
+              "b": "🤫 En silencio"
+            },
+            {
+              "a": "🎁 Lencería sorpresa",
+              "b": "🛁 Baño juntos"
+            }
           ]
         },
         {
@@ -395,12 +726,211 @@
           "emoji": "💋",
           "tipo": "profunda",
           "preguntas": [
-            { "q": "¿Qué es lo más importante para ti en un momento íntimo?", "op": ["Conexión emocional", "Pasión", "Confianza", "Diversión"] },
-            { "q": "¿Cuál es tu forma favorita de mostrar afecto?", "op": ["Besos", "Abrazos", "Caricias", "Palabras"] },
-            { "q": "¿Qué te hace sentir más deseado(a)?" },
-            { "q": "¿Qué te gustaría que hiciéramos más seguido?" },
-            { "q": "Describe nuestra química con un emoji." },
-            { "q": "¿Qué te gustaría probar juntos?" }
+            {
+              "q": "¿Qué es lo más importante para ti en un momento íntimo?",
+              "op": [
+                "Conexión emocional",
+                "Pasión",
+                "Confianza",
+                "Diversión"
+              ]
+            },
+            {
+              "q": "¿Cuál es tu forma favorita de mostrar afecto?",
+              "op": [
+                "Besos",
+                "Abrazos",
+                "Caricias",
+                "Palabras"
+              ]
+            },
+            {
+              "q": "¿Qué te hace sentir más deseado(a)?"
+            },
+            {
+              "q": "¿Qué te gustaría que hiciéramos más seguido?"
+            },
+            {
+              "q": "Describe nuestra química con un emoji."
+            },
+            {
+              "q": "¿Qué te gustaría probar juntos?"
+            }
+          ]
+        },
+        {
+          "id": "pic-nunca",
+          "titulo": "Yo nunca nunca picante",
+          "emoji": "🫣",
+          "tipo": "nunca",
+          "preguntas": [
+            "Nunca he enviado una foto atrevida.",
+            "Nunca he tenido sexo en un lugar público.",
+            "Nunca he fingido un orgasmo.",
+            "Nunca he usado un juguete sexual.",
+            "Nunca he tenido un sueño erótico con alguien conocido.",
+            "Nunca he hecho sexting.",
+            "Nunca he visto porno con mi pareja.",
+            "Nunca he tenido sexo en un carro.",
+            "Nunca me han pillado en plena acción.",
+            "Nunca he usado esposas o vendas en los ojos.",
+            "Nunca he hecho un striptease.",
+            "Nunca he tenido sexo en la ducha."
+          ]
+        },
+        {
+          "id": "pic-donde-como",
+          "titulo": "Dónde y cómo",
+          "emoji": "🌶️",
+          "tipo": "prefieres",
+          "preguntas": [
+            {
+              "a": "🛏️ En la cama",
+              "b": "🛋️ En el sofá"
+            },
+            {
+              "a": "🚿 En la ducha",
+              "b": "🍳 En la cocina"
+            },
+            {
+              "a": "💡 Con la luz prendida",
+              "b": "🌑 A oscuras"
+            },
+            {
+              "a": "🐢 Lento y largo",
+              "b": "🔥 Rápido e intenso"
+            },
+            {
+              "a": "🎯 Que yo mande",
+              "b": "🫦 Que tú mandes"
+            },
+            {
+              "a": "👙 Desvestirnos despacio",
+              "b": "🧥 Arrancarnos la ropa"
+            },
+            {
+              "a": "🗣️ Hablar sucio",
+              "b": "🤫 Solo gemidos"
+            },
+            {
+              "a": "🧸 Probar un juguete",
+              "b": "🎭 Hacer un juego de roles"
+            },
+            {
+              "a": "🌅 Mañanero",
+              "b": "🌙 Antes de dormir"
+            },
+            {
+              "a": "🪞 Frente al espejo",
+              "b": "📹 Grabarnos (y borrarlo)"
+            }
+          ]
+        },
+        {
+          "id": "pic-quien-cama",
+          "titulo": "¿Quién en la cama?",
+          "emoji": "😈",
+          "tipo": "quien",
+          "preguntas": [
+            "¿Quién tiene más ganas más seguido?",
+            "¿Quién es más ruidoso(a)?",
+            "¿Quién es más atrevido(a) en la cama?",
+            "¿Quién aguanta más?",
+            "¿Quién propondría hacerlo en un lugar arriesgado?",
+            "¿Quién se excita más rápido?",
+            "¿Quién manda las fotos más atrevidas?",
+            "¿Quién tiene la fantasía más loca?",
+            "¿Quién es mejor besando?",
+            "¿Quién se duerme primero después?"
+          ]
+        },
+        {
+          "id": "pic-fantasias",
+          "titulo": "Fantasías y deseos",
+          "emoji": "🔥",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Cuál es la parte de mi cuerpo que más te gusta?"
+            },
+            {
+              "q": "¿Cuál es tu fantasía que nunca me has contado?"
+            },
+            {
+              "q": "¿Qué es lo que más te excita de mí?"
+            },
+            {
+              "q": "¿Cuál ha sido nuestra mejor vez y por qué?"
+            },
+            {
+              "q": "¿Cada cuánto te gustaría que lo hiciéramos?",
+              "op": [
+                "Todos los días",
+                "Varias veces por semana",
+                "Una vez por semana",
+                "Cuando se dé"
+              ]
+            },
+            {
+              "q": "¿Qué te gusta más en los preliminares?",
+              "op": [
+                "Besos",
+                "Caricias",
+                "Sexo oral",
+                "Masajes",
+                "Hablar sucio"
+              ]
+            },
+            {
+              "q": "¿Te gustaría probar algún juego de roles? ¿Cuál?"
+            },
+            {
+              "q": "¿Hay algo que no te guste y no me hayas dicho?"
+            },
+            {
+              "q": "¿Dónde te gustaría que lo hiciéramos que nunca lo hayamos hecho?"
+            },
+            {
+              "q": "¿Qué te gustaría que te hiciera la próxima vez?"
+            }
+          ]
+        },
+        {
+          "id": "pic-a-distancia",
+          "titulo": "Picante a distancia",
+          "emoji": "📲",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Qué tipo de mensajes atrevidos te gustan más?",
+              "op": [
+                "Fotos",
+                "Notas de voz",
+                "Textos",
+                "Videollamada"
+              ]
+            },
+            {
+              "q": "¿Qué te gustaría que te dijera en una nota de voz?"
+            },
+            {
+              "q": "¿Qué ropa te gustaría verme puesta en una videollamada?"
+            },
+            {
+              "q": "Describe con un emoji lo que me harías si estuviera ahí."
+            },
+            {
+              "q": "¿Qué es lo primero que me harías cuando nos volvamos a ver?"
+            },
+            {
+              "q": "¿Te animarías a una videollamada atrevida?",
+              "op": [
+                "Sí, de una",
+                "Me da pena pero sí",
+                "Tal vez",
+                "Mejor en persona"
+              ]
+            }
           ]
         }
       ]
