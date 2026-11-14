@@ -86,6 +86,8 @@ const rutas = [
   [/^#\/jugar\/(.+)$/, (id) => vistaJugar(id)],
   [/^#\/resultado\/(.+)$/, (id) => vistaResultado(id)],
   [/^#\/ajustes$/, () => vistaAjustes()],
+  [/^#\/cartas$/, () => vistaCartas()],
+  [/^#\/carta\/(.+)$/, (id) => vistaCarta(id)],
 ];
 async function render() {
   if (!S.info) return vistaBienvenida();
@@ -208,6 +210,7 @@ function vistaHome() {
   app.innerHTML = `${cabecera()}
     <nav class="chips">${filtros.map(([k, t]) => `<button class="chip ${S.filtroHome === k ? "on" : ""}" data-f="${k}">${t}</button>`).join("")}</nav>
     ${invitar}
+    ${tarjetaCartas()}
     <h3>Conversación diaria gratuita</h3>
     <a class="paq t-profunda diaria" href="#/${sitD === "listo" || sitD === "esperando" ? "resultado" : "jugar"}/${d.id}">
       <div class="paq-info">
@@ -370,6 +373,83 @@ async function vistaResultado(id) {
   app.querySelectorAll("[data-t]").forEach((b) => b.onclick = () => { S.tabResultado = b.dataset.t; vistaResultado(id); });
 }
 
+// ---------- cartas protegidas con código ----------
+// El contenido está cifrado (AES-GCM) con una clave derivada del código; sin el código no se puede leer.
+const C = { meta: null, cartas: null };
+const b64 = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+async function descifrar(codigo) {
+  const m = C.meta, enc = new TextEncoder();
+  const base = await crypto.subtle.importKey("raw", enc.encode(codigo), "PBKDF2", false, ["deriveKey"]);
+  const key = await crypto.subtle.deriveKey({ name: "PBKDF2", salt: b64(m.salt), iterations: m.iter, hash: "SHA-256" },
+    base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
+  const plano = await crypto.subtle.decrypt({ name: "AES-GCM", iv: b64(m.iv) }, key, b64(m.data));
+  return JSON.parse(new TextDecoder().decode(plano));
+}
+async function cargarMetaCartas() {
+  if (C.meta !== null) return C.meta;
+  try { const r = await fetch("data/cartas.json", { cache: "no-cache" }); C.meta = r.ok ? await r.json() : false; }
+  catch { C.meta = false; }
+  return C.meta;
+}
+async function intentarGuardado() {
+  if (C.cartas) return true;
+  let cod = null; try { cod = sessionStorage.getItem("nosotros-cartas"); } catch {}
+  if (!cod) return false;
+  try { C.cartas = await descifrar(cod); return true; } catch { return false; }
+}
+function tarjetaCartas() {
+  if (!C.meta) return "";
+  return `<a class="cartas-card" href="#/cartas">
+    <span class="sobre">💌</span>
+    <span><small>Solo para ti</small><b>Para ${esc(C.meta.para || "ti")}</b></span>
+    <span class="candado">${C.cartas ? "›" : "🔒"}</span></a>`;
+}
+async function vistaCartas() {
+  const meta = await cargarMetaCartas();
+  if (!meta) return ir("#/");
+  const head = `<header class="top"><a class="icono" href="#/">‹</a><b class="titulo-top">Para ${esc(meta.para)}</b><span></span></header>`;
+  if (!(await intentarGuardado())) {
+    app.innerHTML = `${head}<section class="bloqueo">
+      <div class="sobre grande">💌</div>
+      <h2 class="mano">Hola, ${esc(meta.para)}</h2>
+      <p class="sub">Esto es solo para ti. Escribe el código para abrirlo.</p>
+      <form id="fcod"><input id="cod" class="codigo-input" inputmode="numeric" autocomplete="off" maxlength="6" placeholder="••••••" required>
+      <button class="btn" type="submit">Abrir</button></form></section>`;
+    const f = document.getElementById("fcod"), inp = document.getElementById("cod");
+    inp.focus();
+    f.onsubmit = async (e) => {
+      e.preventDefault();
+      const btn = f.querySelector("button"); btn.disabled = true;
+      try {
+        C.cartas = await descifrar(inp.value.trim());
+        try { sessionStorage.setItem("nosotros-cartas", inp.value.trim()); } catch {}
+        vistaCartas();
+      } catch {
+        inp.value = ""; inp.classList.add("mal"); setTimeout(() => inp.classList.remove("mal"), 500);
+        toast("Ese no es el código 🙈"); btn.disabled = false;
+      }
+    };
+    return;
+  }
+  const cats = [...new Set(C.cartas.map((c) => c.categoria))];
+  app.innerHTML = `${head}<section class="cartas">
+    <h2 class="mano">Hola, ${esc(meta.para)} 💜</h2>
+    ${cats.map((cat) => `<h3>${esc(cat)}</h3><div class="lista">${C.cartas.filter((c) => c.categoria === cat).map((c) => `
+      <a class="carta-item" href="#/carta/${encodeURIComponent(c.id)}"><span class="paq-emoji">${c.emoji}</span>
+      <span><b>${esc(c.titulo)}</b><small>Toca para leer</small></span><span class="flecha">›</span></a>`).join("")}</div>`).join("")}
+    <p class="nota centro">Pronto habrá más por aquí…</p></section>`;
+}
+async function vistaCarta(id) {
+  await cargarMetaCartas();
+  if (!(await intentarGuardado())) return ir("#/cartas");
+  const c = C.cartas.find((x) => x.id === id);
+  if (!c) return ir("#/cartas");
+  const parrafos = c.texto.split(/\n{2,}/).map((p) => `<p>${esc(p).replace(/\n/g, "<br>")}</p>`).join("");
+  app.innerHTML = `<header class="top"><a class="icono" href="#/cartas">‹</a><b class="titulo-top">${esc(c.categoria)}</b><span></span></header>
+    <article class="carta"><div class="carta-emoji">${c.emoji}</div><h2 class="mano">${esc(c.titulo)}</h2>
+    ${parrafos}<p class="firma mano">${esc(c.firma || "")}</p></article>`;
+}
+
 // ---------- ajustes ----------
 function vistaAjustes() {
   app.innerHTML = `<header class="top"><a class="icono" href="#/">‹</a><b class="titulo-top">Ajustes</b><span></span></header>
@@ -399,6 +479,7 @@ async function arrancar() {
     for (const t of S.data.temas) for (const p of t.paquetes) { S.paquetes.set(p.id, p); S.temaDe.set(p.id, t); }
     S.info = await be.init();
     if (S.info) await refrescarEstado();
+    await cargarMetaCartas(); await intentarGuardado();
   } catch (x) {
     app.innerHTML = `<section class="bienvenida"><div class="logo">⚠️</div><h2>No se pudo cargar</h2><p class="sub">${esc(x.message)}</p>
       <button class="btn" onclick="location.reload()">Reintentar</button></section>`;

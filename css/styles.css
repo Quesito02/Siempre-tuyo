@@ -175,3 +175,32 @@ textarea { min-height: 140px; resize: vertical; }
 .cargando { min-height: 90vh; display: grid; place-items: center; font-size: 56px; animation: lat 1s infinite alternate; }
 @keyframes lat { to { transform: scale(1.15); } }
 @media (max-width: 360px) { .cats { grid-template-columns: repeat(2, 1fr); } .cat { aspect-ratio: 1.6; } }
+
+/* ---------- cartas ---------- */
+.mano { font-family: "Caveat", cursive; font-weight: 700; }
+.cartas-card { display: flex; align-items: center; gap: 14px; margin-top: 14px; padding: 14px 16px; border-radius: var(--radio);
+  background: linear-gradient(120deg, #5b1a45, #2a1236 75%); border: 1px solid #ff5fa266; box-shadow: 0 6px 24px #ff5fa222; }
+.cartas-card .sobre { font-size: 30px; }
+.cartas-card span:nth-child(2) { flex: 1; display: grid; }
+.cartas-card small { color: #ffb3d1; font-size: 11px; text-transform: uppercase; letter-spacing: .08em; font-weight: 700; }
+.cartas-card b { font-family: "Caveat", cursive; font-size: 26px; line-height: 1.1; }
+.candado { font-size: 18px; color: var(--acento); }
+.bloqueo { text-align: center; padding-top: 40px; display: grid; gap: 10px; }
+.bloqueo form { display: grid; gap: 12px; margin-top: 8px; }
+.sobre.grande { font-size: 72px; animation: lat 1.6s infinite alternate; }
+.bloqueo h2, .cartas > h2 { font-size: 40px; margin: 0; }
+.codigo-input { text-align: center; font-size: 30px; letter-spacing: .5em; padding-left: calc(14px + .5em); font-weight: 800; }
+.codigo-input.mal { border-color: #ff4d6d; animation: temblor .4s; }
+@keyframes temblor { 25% { transform: translateX(-8px); } 50% { transform: translateX(8px); } 75% { transform: translateX(-4px); } }
+.cartas { padding-top: 10px; }
+.carta-item { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: var(--radio);
+  background: var(--card); border: 1px solid #ff5fa244; }
+.carta-item span:nth-child(2) { flex: 1; display: grid; }
+.carta-item small { color: var(--muted); font-size: 12px; }
+.centro { text-align: center; margin-top: 24px; }
+.carta { margin-top: 12px; padding: 26px 22px 30px; border-radius: 22px; color: #3a2230;
+  background: linear-gradient(#fff8f2, #fdeee6); box-shadow: 0 12px 40px #0009; font-size: 16.5px; line-height: 1.65; }
+.carta-emoji { text-align: center; font-size: 40px; }
+.carta h2 { text-align: center; font-size: 38px; margin: 2px 0 16px; color: #c2185b; }
+.carta p { margin: 0 0 14px; }
+.carta .firma { text-align: right; font-size: 30px; color: #c2185b; margin-top: 20px; }
