@@ -29,7 +29,37 @@
     "¿Cómo te gusta que te consuelen cuando estás triste?",
     "¿Qué es lo que más extrañas cuando no estamos juntos?",
     "¿Qué tradición te gustaría que tuviéramos como pareja?",
-    "¿Qué nos imaginas haciendo dentro de cinco años?"
+    "¿Qué nos imaginas haciendo dentro de cinco años?",
+    "¿Qué es lo que más te gusta de cómo te hablo?",
+    "¿Qué harías si tuvieras un día entero solo para ti?",
+    "¿Qué te gustaría que te dijera más seguido?",
+    "¿Cuál es la mejor decisión que has tomado?",
+    "¿Qué te gustaría que hiciéramos el próximo fin de semana?",
+    "¿Qué canción pondrías en nuestra boda?",
+    "¿Qué parte de tu día disfrutas más?",
+    "¿Qué es algo nuevo que aprendiste esta semana?",
+    "¿Qué te hace sentir orgulloso(a) de ti?",
+    "¿Qué foto nuestra es tu favorita?",
+    "¿Cuál es tu antojo de hoy?",
+    "¿Qué te gustaría cambiar de tu rutina?",
+    "¿Qué es lo más bonito que alguien ha hecho por ti?",
+    "¿Qué tres cosas te hicieron feliz esta semana?",
+    "¿Qué es algo que te gustaría que entendiera mejor de ti?",
+    "¿Qué meta quieres cumplir este año?",
+    "¿Qué personaje de película serías?",
+    "Si pudieras cenar con cualquier persona, ¿quién sería?",
+    "¿Cuál es tu palabra favorita?",
+    "¿Qué te gustaría que recordáramos de este año?",
+    "¿Qué es lo primero que piensas al despertar?",
+    "¿Cómo te imaginas a los dos de viejitos?",
+    "¿Qué cosa sencilla te hace sentir en casa?",
+    "¿Qué es lo que más te gusta de nuestras peleas… cuando se acaban?",
+    "¿Qué te gustaría regalarme y no has podido?",
+    "¿Qué te da paz?",
+    "¿Cuál es el mejor plato que has comido en tu vida?",
+    "¿Qué superpoder usarías para nuestra relación?",
+    "¿Qué te gustaría preguntarme y no te has atrevido?",
+    "¿Cómo describirías el día de hoy en una palabra?"
   ],
   "temas": [
     {
@@ -167,6 +197,94 @@
             },
             {
               "q": "¿Qué plan sencillo te hace sentir más cerca de mí?"
+            }
+          ]
+        },
+        {
+          "id": "cal-verguenzas",
+          "titulo": "Momentos de pena",
+          "emoji": "🙈",
+          "tipo": "nunca",
+          "preguntas": [
+            "Nunca me he caído en público.",
+            "Nunca he saludado a alguien que no me estaba saludando a mí.",
+            "Nunca se me ha roto el pantalón en la calle.",
+            "Nunca he llamado a un profesor 'mamá' o 'papá'.",
+            "Nunca he enviado un audio que no debía.",
+            "Nunca me han pillado hablando solo(a).",
+            "Nunca he ido a una fiesta sin que me invitaran.",
+            "Nunca me he quedado encerrado(a) en un baño.",
+            "Nunca he olvidado el nombre de alguien justo al presentarlo.",
+            "Nunca he llorado por una canción en el bus.",
+            "Nunca he fingido saber de qué me estaban hablando.",
+            "Nunca me he quedado dormido(a) en clase o en el trabajo."
+          ]
+        },
+        {
+          "id": "cal-al-azar",
+          "titulo": "Preguntas al azar",
+          "emoji": "🎲",
+          "tipo": "quien",
+          "preguntas": [
+            "¿Quién es más probable que se coma la última porción sin preguntar?",
+            "¿Quién habla más dormido(a)?",
+            "¿Quién tiene más fotos en el celular?",
+            "¿Quién se ríe de sus propios chistes?",
+            "¿Quién canta peor?",
+            "¿Quién se demora más contestando mensajes?",
+            "¿Quién es más dramático(a)?",
+            "¿Quién se pierde más en la ciudad?",
+            "¿Quién es más competitivo(a) en los juegos?",
+            "¿Quién gasta más en domicilios?",
+            "¿Quién es más friolento(a)?",
+            "¿Quién tiene la peor memoria?"
+          ]
+        },
+        {
+          "id": "cal-comida",
+          "titulo": "Antojos",
+          "emoji": "🍔",
+          "tipo": "prefieres",
+          "preguntas": [
+            {
+              "a": "🍕 Pizza",
+              "b": "🍔 Hamburguesa"
+            },
+            {
+              "a": "🍣 Sushi",
+              "b": "🌮 Tacos"
+            },
+            {
+              "a": "☕ Café",
+              "b": "🍵 Té o aromática"
+            },
+            {
+              "a": "🍫 Dulce",
+              "b": "🧂 Salado"
+            },
+            {
+              "a": "🥞 Desayuno elaborado",
+              "b": "🥐 Pan con café y ya"
+            },
+            {
+              "a": "🌶️ Picante",
+              "b": "🧀 Suave"
+            },
+            {
+              "a": "🍦 Helado",
+              "b": "🍰 Torta"
+            },
+            {
+              "a": "🍟 Papas fritas",
+              "b": "🥗 Ensalada"
+            },
+            {
+              "a": "🍗 Pollo asado",
+              "b": "🥩 Carne asada"
+            },
+            {
+              "a": "🥤 Gaseosa",
+              "b": "🧃 Jugo natural"
             }
           ]
         }
@@ -310,6 +428,157 @@
               "q": "¿Qué parte de nuestra historia le contarías a alguien?"
             }
           ]
+        },
+        {
+          "id": "rel-nunca",
+          "titulo": "En pareja",
+          "emoji": "💑",
+          "tipo": "nunca",
+          "preguntas": [
+            "Nunca he revisado el celular de mi pareja.",
+            "Nunca he fingido que me gustó un regalo.",
+            "Nunca he sentido celos de un amigo o amiga de mi pareja.",
+            "Nunca he llorado por una pelea de pareja.",
+            "Nunca he planeado una sorpresa romántica.",
+            "Nunca he escrito una carta de amor a mano.",
+            "Nunca he dicho 'estoy bien' cuando no lo estaba.",
+            "Nunca he stalkeado a un(a) ex de mi pareja.",
+            "Nunca me he dormido en una llamada con mi pareja.",
+            "Nunca he dedicado una canción.",
+            "Nunca he olvidado una fecha importante.",
+            "Nunca he pensado en casarme."
+          ]
+        },
+        {
+          "id": "rel-detalles",
+          "titulo": "Detalles y celos",
+          "emoji": "🎁",
+          "tipo": "quien",
+          "preguntas": [
+            "¿Quién es más detallista?",
+            "¿Quién es más celoso(a)?",
+            "¿Quién dice 'te amo' más veces al día?",
+            "¿Quién recuerda mejor las fechas especiales?",
+            "¿Quién pide más fotos?",
+            "¿Quién se enoja por cosas pequeñas?",
+            "¿Quién es más cursi en público?",
+            "¿Quién manda más memes?",
+            "¿Quién da los mejores abrazos?",
+            "¿Quién da los mejores consejos?",
+            "¿Quién se pone más intenso(a) cuando extraña?",
+            "¿Quién termina cediendo en las peleas?"
+          ]
+        },
+        {
+          "id": "rel-como-amamos",
+          "titulo": "Cómo nos amamos",
+          "emoji": "💌",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Qué te hace sentir más amado(a)?",
+              "op": [
+                "Que me lo digas",
+                "Pasar tiempo juntos",
+                "Detalles",
+                "Abrazos y besos",
+                "Que me ayudes"
+              ]
+            },
+            {
+              "q": "¿Cómo prefieres que te pidan perdón?",
+              "op": [
+                "Con palabras",
+                "Con un detalle",
+                "Con un abrazo",
+                "Cambiando la actitud"
+              ]
+            },
+            {
+              "q": "¿Qué es lo que más te molesta en una relación?",
+              "op": [
+                "La mentira",
+                "Los celos",
+                "La falta de atención",
+                "La falta de comunicación"
+              ]
+            },
+            {
+              "q": "¿Qué tan seguido te gusta que hablemos?",
+              "op": [
+                "Todo el día",
+                "Varias veces al día",
+                "Una vez al día, pero bien",
+                "Cuando se pueda"
+              ]
+            },
+            {
+              "q": "¿Qué es algo que hice que nunca vas a olvidar?"
+            },
+            {
+              "q": "¿Qué te gustaría que hiciera más seguido?"
+            },
+            {
+              "q": "¿Cuándo te sentiste más cerca de mí?"
+            },
+            {
+              "q": "¿Qué crees que es lo más difícil de nuestra relación?"
+            },
+            {
+              "q": "¿Qué apodo te gusta que te diga?"
+            },
+            {
+              "q": "¿Qué significa para ti la fidelidad?"
+            }
+          ]
+        },
+        {
+          "id": "rel-regalos",
+          "titulo": "Regalos",
+          "emoji": "🎀",
+          "tipo": "prefieres",
+          "preguntas": [
+            {
+              "a": "💐 Flores",
+              "b": "🍫 Chocolates"
+            },
+            {
+              "a": "🧸 Peluche",
+              "b": "📸 Álbum de fotos"
+            },
+            {
+              "a": "👕 Ropa",
+              "b": "💍 Joya"
+            },
+            {
+              "a": "🎟️ Entradas a un concierto",
+              "b": "✈️ Un viaje corto"
+            },
+            {
+              "a": "✍️ Algo hecho a mano",
+              "b": "🛍️ Algo comprado"
+            },
+            {
+              "a": "🎂 Fiesta sorpresa",
+              "b": "🍷 Cena íntima"
+            },
+            {
+              "a": "📦 Muchos detalles pequeños",
+              "b": "🎁 Un regalo grande"
+            },
+            {
+              "a": "🎶 Una canción",
+              "b": "💌 Una carta"
+            },
+            {
+              "a": "🌹 Regalo en fecha especial",
+              "b": "🍀 Regalo sin motivo"
+            },
+            {
+              "a": "🕯️ Experiencia juntos",
+              "b": "📱 Algo tecnológico"
+            }
+          ]
         }
       ]
     },
@@ -431,6 +700,91 @@
               "b": "⌛ Siempre llegar 20 min antes"
             }
           ]
+        },
+        {
+          "id": "con-personalidad",
+          "titulo": "Personalidad",
+          "emoji": "🎭",
+          "tipo": "quien",
+          "preguntas": [
+            "¿Quién es más introvertido(a)?",
+            "¿Quién es más terco(a)?",
+            "¿Quién es más paciente?",
+            "¿Quién es más optimista?",
+            "¿Quién se estresa más fácil?",
+            "¿Quién es más impulsivo(a)?",
+            "¿Quién es más perfeccionista?",
+            "¿Quién es más sociable?",
+            "¿Quién es más sensible?",
+            "¿Quién es más aventurero(a)?",
+            "¿Quién es más ordenado(a) con la plata?",
+            "¿Quién es más puntual?"
+          ]
+        },
+        {
+          "id": "con-recuerdos",
+          "titulo": "Recuerdos",
+          "emoji": "📼",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Cuál es tu recuerdo favorito de la infancia?"
+            },
+            {
+              "q": "¿Qué querías ser cuando eras niño(a)?"
+            },
+            {
+              "q": "¿Cómo eras en el colegio?",
+              "op": [
+                "Juicioso(a)",
+                "Recochero(a)",
+                "Callado(a)",
+                "Popular",
+                "Un poco de todo"
+              ]
+            },
+            {
+              "q": "¿Cuál fue tu primer celular?"
+            },
+            {
+              "q": "¿Cuál era tu caricatura favorita?"
+            },
+            {
+              "q": "¿Cuál ha sido el mejor cumpleaños de tu vida?"
+            },
+            {
+              "q": "¿Quién fue tu mejor amigo(a) de niño(a)?"
+            },
+            {
+              "q": "¿Qué es lo más loco que hiciste de adolescente?"
+            },
+            {
+              "q": "¿Qué recuerdo de tu familia te hace sonreír?"
+            },
+            {
+              "q": "¿Cuál fue el momento más difícil que has superado?"
+            }
+          ]
+        },
+        {
+          "id": "con-locuras",
+          "titulo": "Locuras",
+          "emoji": "🤪",
+          "tipo": "nunca",
+          "preguntas": [
+            "Nunca me he teñido el pelo de un color loco.",
+            "Nunca me he hecho un tatuaje.",
+            "Nunca he tenido un piercing.",
+            "Nunca me he escapado de la casa de noche.",
+            "Nunca he trasnochado hasta ver el amanecer.",
+            "Nunca he cantado en karaoke.",
+            "Nunca me he colado en un evento.",
+            "Nunca he bailado encima de una mesa.",
+            "Nunca he hecho una apuesta y la he perdido.",
+            "Nunca he dicho que sí a un reto absurdo.",
+            "Nunca me he cortado el pelo yo mismo(a).",
+            "Nunca he hablado con un(a) desconocido(a) por horas."
+          ]
         }
       ]
     },
@@ -513,6 +867,97 @@
             "Nunca he dormido en un aeropuerto o terminal.",
             "Nunca he hecho una caminata de más de 5 horas.",
             "Nunca me he bañado en un río."
+          ]
+        },
+        {
+          "id": "via-sonado",
+          "titulo": "Viaje soñado",
+          "emoji": "🗺️",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Qué tipo de viaje prefieres?",
+              "op": [
+                "Playa",
+                "Montaña",
+                "Ciudad",
+                "Aventura",
+                "Crucero"
+              ]
+            },
+            {
+              "q": "¿Cómo te gusta viajar?",
+              "op": [
+                "Mochilero(a)",
+                "Cómodo(a)",
+                "De lujo",
+                "Lo que salga"
+              ]
+            },
+            {
+              "q": "¿Cuál es el primer país al que te gustaría ir conmigo?"
+            },
+            {
+              "q": "¿Qué lugar de Colombia te falta conocer?"
+            },
+            {
+              "q": "¿Cuántos días dura el viaje perfecto?",
+              "op": [
+                "Un fin de semana",
+                "Una semana",
+                "Dos semanas",
+                "Un mes o más"
+              ]
+            },
+            {
+              "q": "¿Qué comida te gustaría probar en otro país?"
+            },
+            {
+              "q": "¿Cuál ha sido tu mejor viaje hasta ahora?"
+            },
+            {
+              "q": "Si nos fuéramos mañana, ¿a dónde iríamos?"
+            }
+          ]
+        },
+        {
+          "id": "via-modo",
+          "titulo": "Modo viaje",
+          "emoji": "🧳",
+          "tipo": "prefieres",
+          "preguntas": [
+            {
+              "a": "🏨 Hotel",
+              "b": "🏡 Airbnb"
+            },
+            {
+              "a": "🚌 Bus",
+              "b": "🚗 Carro propio"
+            },
+            {
+              "a": "🌊 Mar",
+              "b": "🏞️ Río o lago"
+            },
+            {
+              "a": "📷 Fotos de paisajes",
+              "b": "🤳 Selfies"
+            },
+            {
+              "a": "🛌 Descansar todo el viaje",
+              "b": "🏃 Hacer mil planes"
+            },
+            {
+              "a": "🍽️ Restaurantes",
+              "b": "🛒 Cocinar allá"
+            },
+            {
+              "a": "🌞 Tierra caliente",
+              "b": "🧥 Tierra fría"
+            },
+            {
+              "a": "🧭 Guía turístico",
+              "b": "🗺️ Explorar solos"
+            }
           ]
         }
       ]
@@ -654,6 +1099,344 @@
             "¿Quién se quedaría con más espacio en el clóset?",
             "¿Quién consentiría más a la mascota?",
             "¿Quién organizaría las reuniones familiares?"
+          ]
+        },
+        {
+          "id": "fut-hijos",
+          "titulo": "Hijos y familia",
+          "emoji": "👶",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Te gustaría tener hijos?",
+              "op": [
+                "Sí",
+                "No",
+                "Tal vez",
+                "Más adelante"
+              ]
+            },
+            {
+              "q": "¿Cuántos?",
+              "op": [
+                "Uno",
+                "Dos",
+                "Tres o más",
+                "Ninguno"
+              ]
+            },
+            {
+              "q": "¿Cuándo?",
+              "op": [
+                "Pronto",
+                "En unos años",
+                "Después de los 30",
+                "No sé"
+              ]
+            },
+            {
+              "q": "¿Qué nombre te gustaría para un hijo o una hija?"
+            },
+            {
+              "q": "¿Cómo te gustaría educarlos?",
+              "op": [
+                "Estricto(a)",
+                "Relajado(a)",
+                "Un equilibrio",
+                "Como me criaron"
+              ]
+            },
+            {
+              "q": "¿Qué valor es el más importante que les enseñarías?"
+            },
+            {
+              "q": "¿Qué harías distinto a como te criaron?"
+            },
+            {
+              "q": "¿Adoptarías?",
+              "op": [
+                "Sí",
+                "No",
+                "Lo pensaría"
+              ]
+            },
+            {
+              "q": "¿Qué te da miedo de ser papá o mamá?"
+            },
+            {
+              "q": "¿Cómo te imaginas una Navidad con nuestra familia?"
+            }
+          ]
+        },
+        {
+          "id": "fut-vida-juntos",
+          "titulo": "La vida juntos",
+          "emoji": "🏡",
+          "tipo": "prefieres",
+          "preguntas": [
+            {
+              "a": "🌆 Vivir en la ciudad",
+              "b": "🌳 Vivir en el campo"
+            },
+            {
+              "a": "🐶 Perro",
+              "b": "🐱 Gato"
+            },
+            {
+              "a": "💒 Boda grande",
+              "b": "💍 Boda pequeña"
+            },
+            {
+              "a": "🏝️ Luna de miel en playa",
+              "b": "🗼 Luna de miel en Europa"
+            },
+            {
+              "a": "🏠 Comprar casa",
+              "b": "🔑 Arrendar y viajar"
+            },
+            {
+              "a": "🇨🇴 Quedarnos en Colombia",
+              "b": "🌎 Vivir en otro país"
+            },
+            {
+              "a": "💼 Trabajo estable",
+              "b": "🚀 Emprender juntos"
+            },
+            {
+              "a": "👨‍👩‍👧 Vivir cerca de la familia",
+              "b": "📍 Vivir lejos de todos"
+            },
+            {
+              "a": "🛏️ Cama grande",
+              "b": "🛌 Camas separadas cuando roncas 😅"
+            },
+            {
+              "a": "📺 Una tele en la sala",
+              "b": "🎬 Un cuarto de cine"
+            }
+          ]
+        },
+        {
+          "id": "fut-responsable",
+          "titulo": "Vida de adulto",
+          "emoji": "🧾",
+          "tipo": "nunca",
+          "preguntas": [
+            "Nunca he pagado un servicio tarde.",
+            "Nunca he vivido solo(a).",
+            "Nunca he hecho un presupuesto mensual.",
+            "Nunca he cocinado para más de 5 personas.",
+            "Nunca he tenido una deuda.",
+            "Nunca he armado un mueble solo(a).",
+            "Nunca he cuidado una planta por más de un mes.",
+            "Nunca he ahorrado para algo grande.",
+            "Nunca he arreglado algo de la casa yo mismo(a).",
+            "Nunca he hecho mercado para todo el mes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aficiones",
+      "nombre": "Aficiones",
+      "emoji": "🎮",
+      "paquetes": [
+        {
+          "id": "afi-prefieres",
+          "titulo": "Ocio",
+          "emoji": "🎬",
+          "tipo": "prefieres",
+          "preguntas": [
+            {
+              "a": "🎬 Películas",
+              "b": "📺 Series"
+            },
+            {
+              "a": "😱 Terror",
+              "b": "😂 Comedia"
+            },
+            {
+              "a": "🎮 PlayStation",
+              "b": "🎮 Xbox"
+            },
+            {
+              "a": "📚 Leer",
+              "b": "🎧 Podcasts"
+            },
+            {
+              "a": "⚽ Fútbol",
+              "b": "🏀 Baloncesto"
+            },
+            {
+              "a": "🎤 Concierto",
+              "b": "🎭 Teatro"
+            },
+            {
+              "a": "🏋️ Gimnasio",
+              "b": "🧘 Yoga"
+            },
+            {
+              "a": "📱 TikTok",
+              "b": "📸 Instagram"
+            },
+            {
+              "a": "🎨 Dibujar",
+              "b": "🎸 Tocar un instrumento"
+            },
+            {
+              "a": "🌧️ Día de lluvia en casa",
+              "b": "☀️ Día de sol afuera"
+            }
+          ]
+        },
+        {
+          "id": "afi-quien",
+          "titulo": "¿Quién es más…?",
+          "emoji": "🏆",
+          "tipo": "quien",
+          "preguntas": [
+            "¿Quién es más fan de una serie?",
+            "¿Quién pasa más tiempo en el celular?",
+            "¿Quién gana más en videojuegos?",
+            "¿Quién hace más ejercicio?",
+            "¿Quién lee más?",
+            "¿Quién baila más en las fiestas?",
+            "¿Quién conoce más canciones de memoria?",
+            "¿Quién se emociona más con el fútbol?",
+            "¿Quién empieza más hobbies y no los termina?",
+            "¿Quién ve más películas repetidas?"
+          ]
+        },
+        {
+          "id": "afi-gustos",
+          "titulo": "Lo que nos gusta",
+          "emoji": "🎧",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Cuál es la canción que más has escuchado este año?"
+            },
+            {
+              "q": "¿Qué serie recomendarías a todo el mundo?"
+            },
+            {
+              "q": "¿Qué plan te gusta más un sábado?",
+              "op": [
+                "Cine",
+                "Rumba",
+                "Videojuegos",
+                "Salir a comer",
+                "Dormir"
+              ]
+            },
+            {
+              "q": "¿Qué hobby te gustaría que hiciéramos juntos?"
+            },
+            {
+              "q": "¿Cuál es tu artista favorito?"
+            },
+            {
+              "q": "¿Qué película te hizo llorar?"
+            },
+            {
+              "q": "¿Qué deporte te gustaría aprender?"
+            },
+            {
+              "q": "¿Qué videojuego o juego de mesa te gustaría jugar conmigo?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "familia-amigos",
+      "nombre": "Familia y amigos",
+      "emoji": "👨‍👩‍👧",
+      "paquetes": [
+        {
+          "id": "fa-quien",
+          "titulo": "Con la gente",
+          "emoji": "🫂",
+          "tipo": "quien",
+          "preguntas": [
+            "¿Quién se lleva mejor con la familia del otro?",
+            "¿Quién tiene más amigos?",
+            "¿Quién es más apegado(a) a su mamá?",
+            "¿Quién organiza más los planes con amigos?",
+            "¿Quién es el alma de la fiesta?",
+            "¿Quién cuenta más chismes?",
+            "¿Quién se va primero de las reuniones?",
+            "¿Quién habla más con desconocidos?",
+            "¿Quién defiende más a sus amigos?",
+            "¿Quién llama más a la familia?"
+          ]
+        },
+        {
+          "id": "fa-profunda",
+          "titulo": "Mi gente",
+          "emoji": "🏠",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Quién es la persona más importante de tu familia para ti?"
+            },
+            {
+              "q": "¿Cómo es tu relación con tus papás?",
+              "op": [
+                "Muy unida",
+                "Buena",
+                "Complicada",
+                "Distante"
+              ]
+            },
+            {
+              "q": "¿Qué tradición familiar te gustaría seguir conmigo?"
+            },
+            {
+              "q": "¿Qué amigo(a) mío(a) te cae mejor?"
+            },
+            {
+              "q": "¿Qué te gustaría que mi familia supiera de ti?"
+            },
+            {
+              "q": "¿Cada cuánto te gusta ver a tu familia?",
+              "op": [
+                "Todos los días",
+                "Cada semana",
+                "Cada mes",
+                "En fechas especiales"
+              ]
+            },
+            {
+              "q": "¿Quién es tu mejor amigo(a) y por qué?"
+            },
+            {
+              "q": "¿Qué te enseñó tu familia sobre el amor?"
+            },
+            {
+              "q": "¿Cómo te gustaría pasar las fiestas de diciembre?"
+            },
+            {
+              "q": "¿Qué te preocupa de conocer más a mi familia?"
+            }
+          ]
+        },
+        {
+          "id": "fa-nunca",
+          "titulo": "Historias de familia",
+          "emoji": "📸",
+          "tipo": "nunca",
+          "preguntas": [
+            "Nunca me han regañado frente a mis amigos.",
+            "Nunca he mentido para quedarme en casa de un amigo.",
+            "Nunca he peleado con un hermano o primo a los golpes.",
+            "Nunca me he quedado a cargo de un bebé.",
+            "Nunca me he perdido una reunión familiar a propósito.",
+            "Nunca he tenido un amigo imaginario.",
+            "Nunca he hecho un viaje solo con amigos.",
+            "Nunca me he peleado con un amigo por una pareja.",
+            "Nunca he presentado a una pareja en mi casa.",
+            "Nunca he pasado una Navidad lejos de mi familia."
           ]
         }
       ]
@@ -930,6 +1713,148 @@
                 "Tal vez",
                 "Mejor en persona"
               ]
+            }
+          ]
+        },
+        {
+          "id": "pic-nunca2",
+          "titulo": "Yo nunca nunca extremo",
+          "emoji": "🥵",
+          "tipo": "nunca",
+          "preguntas": [
+            "Nunca lo he hecho en la casa de mis papás.",
+            "Nunca he tenido sexo en la playa.",
+            "Nunca he hecho un trío.",
+            "Nunca lo he hecho más de tres veces en un día.",
+            "Nunca he usado comida en la cama.",
+            "Nunca he dejado marcas.",
+            "Nunca he ido a un motel.",
+            "Nunca he tenido sexo por videollamada.",
+            "Nunca he probado algo atado(a).",
+            "Nunca he tenido sexo en un lugar donde nos podían ver.",
+            "Nunca me he excitado en un lugar inapropiado.",
+            "Nunca he usado lencería para sorprender."
+          ]
+        },
+        {
+          "id": "pic-prefieres3",
+          "titulo": "Más preferencias",
+          "emoji": "💋",
+          "tipo": "prefieres",
+          "preguntas": [
+            {
+              "a": "👅 Dar",
+              "b": "😮‍💨 Recibir"
+            },
+            {
+              "a": "🔥 Rudo",
+              "b": "🌹 Romántico"
+            },
+            {
+              "a": "🗝️ Lugar nuevo",
+              "b": "🛏️ Lugar de siempre"
+            },
+            {
+              "a": "🎬 Ver algo juntos antes",
+              "b": "🍷 Unos tragos antes"
+            },
+            {
+              "a": "👀 Mirarnos a los ojos",
+              "b": "🙈 Con los ojos vendados"
+            },
+            {
+              "a": "🧴 Masaje con aceite",
+              "b": "🛁 Baño de espuma"
+            },
+            {
+              "a": "📸 Foto atrevida",
+              "b": "🎙️ Nota de voz atrevida"
+            },
+            {
+              "a": "⏱️ Rapidito",
+              "b": "🕰️ Toda la noche"
+            },
+            {
+              "a": "🌧️ Lluvia y cobija",
+              "b": "🔥 Calor y ventilador"
+            },
+            {
+              "a": "👔 Disfraz",
+              "b": "🩲 Ropa interior sexy"
+            }
+          ]
+        },
+        {
+          "id": "pic-quien3",
+          "titulo": "Confesiones",
+          "emoji": "🤭",
+          "tipo": "quien",
+          "preguntas": [
+            "¿Quién piensa más en sexo durante el día?",
+            "¿Quién es más tímido(a) para pedir lo que quiere?",
+            "¿Quién se pone más celoso(a) si alguien coquetea?",
+            "¿Quién tiene más experiencia?",
+            "¿Quién se excita con menos?",
+            "¿Quién se atrevería a algo más extremo?",
+            "¿Quién se queda con ganas más seguido?",
+            "¿Quién inventa mejores excusas para quedarse en la cama?",
+            "¿Quién manda indirectas más atrevidas?",
+            "¿Quién es mejor dando masajes?"
+          ]
+        },
+        {
+          "id": "pic-confesiones",
+          "titulo": "Confesiones de cama",
+          "emoji": "🔞",
+          "tipo": "profunda",
+          "preguntas": [
+            {
+              "q": "¿Qué tan importante es el sexo para ti en la relación?",
+              "op": [
+                "Muy importante",
+                "Importante",
+                "Normal",
+                "Poco importante"
+              ]
+            },
+            {
+              "q": "¿Cuál es tu momento favorito del día para hacerlo?",
+              "op": [
+                "Mañana",
+                "Tarde",
+                "Noche",
+                "Madrugada"
+              ]
+            },
+            {
+              "q": "¿Qué es lo más atrevido que has pensado hacer conmigo?"
+            },
+            {
+              "q": "¿Qué palabra o frase te prende cuando te la digo?"
+            },
+            {
+              "q": "¿Qué prenda mía te gusta más?"
+            },
+            {
+              "q": "¿Qué te gustaría que te dijera mientras lo hacemos?"
+            },
+            {
+              "q": "¿Te gustaría usar juguetes?",
+              "op": [
+                "Sí",
+                "Ya los uso",
+                "Tal vez",
+                "No"
+              ]
+            },
+            {
+              "q": "¿Cuál es tu posición favorita?"
+            },
+            {
+              "q": "¿Hay algo que te dé pena pedirme?"
+            },
+            {
+              "q": "¿Qué recuerdo íntimo nuestro te viene a la mente seguido?"
             }
           ]
         }
