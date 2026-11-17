@@ -48,7 +48,7 @@ function diaria() {
   const clave = d.toISOString().slice(0, 10).replaceAll("-", "");
   const n = Math.floor(d.getTime() / 86400e3);
   const pool = S.data.diarias;
-  return { id: "diaria-" + clave, titulo: "Conversación diaria", emoji: "☕", tipo: "profunda",
+  return { id: "diaria-n-" + clave, titulo: "Conversación diaria", emoji: "☕", tipo: "profunda",
            preguntas: [{ q: pool[n % pool.length] }], diaria: true };
 }
 function faltaParaMedianoche() {
