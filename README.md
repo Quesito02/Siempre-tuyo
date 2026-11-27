@@ -8,6 +8,7 @@ Página web estática (GitHub Pages) + Supabase. Cada uno responde desde su celu
 - **¿Prefieres?**: opción A / opción B (con % de similitud)
 - **Conversación profunda**: opciones o texto libre
 - **Conversación diaria**: una pregunta nueva cada día (hora Colombia)
+- **¿Me conoces?**: cada uno responde sobre sí mismo y adivina lo del otro; gana quien acierte más (marcador acumulado)
 
 ## Estructura
 ```
@@ -35,3 +36,9 @@ En `data/preguntas.json`, cada tema tiene `paquetes`. Cada paquete necesita un `
 - `profunda`: `{ "q": "…", "op": ["…"] }`, o solo `{ "q": "…" }` para respuesta libre.
 
 Un tema con `"adultos": true` solo se ve si se activa "Mostrar temas 18+" en Ajustes.
+
+## Paquetes de reemplazo
+`nuevas` en `data/preguntas.json` guarda paquetes nuevos por tema. Cuando los dos terminan un paquete de `temas`, ese paquete sale de la lista y entra uno de `nuevas` del mismo tema. Los que nadie o solo uno ha respondido se quedan igual.
+
+## ¿Me conoces?
+Las rondas están en `conoces` (cada pregunta con 4 opciones). Usa la misma tabla `respuestas`, no necesita SQL nuevo.

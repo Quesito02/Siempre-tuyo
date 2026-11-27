@@ -102,6 +102,7 @@ export function crearRincon(ctx) {
       <h3>Lo nuestro</h3>
       <div class="temas">
         ${item("#/preguntas", "💬", "Preguntas", pend ? `<span class="pill">${pend} ${pend === 1 ? "pendiente" : "pendientes"}</span> Juegos y conversaciones` : "Juegos y conversaciones")}
+        ${ctx.resumenConoces ? item("#/conoces", "🎯", "¿Me conoces?", ctx.resumenConoces()) : ""}
         ${item("#/planes", "📝", "Planes", `<i style="--p:${pctPlanes}%"></i>${hechos} de ${planes.length} cumplidos`)}
         ${item("#/capsulas", "💌", "Cápsulas", porAbrir ? `${porAbrir} por abrir · cartas y mensajes` : "Cartas y mensajes para el futuro")}
         ${item("#/dia", "☀️", "Día a día", mio ? `Tú: ${esc(mio.datos.emoji)}${suyo ? ` · ${esc(nombre(otro()))}: ${esc(suyo.datos.emoji)}` : ` · ${esc(nombre(otro()))} aún no`}` : `<span class="pill">Hoy</span> Cuéntale cómo va tu día`)}

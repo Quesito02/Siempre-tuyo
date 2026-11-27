@@ -1,6 +1,7 @@
 import { crearBackend } from "./backend.js";
 import { NOMBRE_APP, ZONA_UTC } from "./config.js";
 import { crearRincon } from "./rincon.js";
+import { crearConoces } from "./conoces.js";
 
 const TIPOS = {
   nunca:     { label: "Yo nunca nunca",          corto: "Nunca he",            emoji: "😝" },
@@ -65,6 +66,24 @@ async function refrescarEstado() {
     if (!S.estado.has(f.paquete_id)) S.estado.set(f.paquete_id, new Set());
     S.estado.get(f.paquete_id).add(f.jugador);
   }
+  armarTemas();
+}
+// Los paquetes que ya respondieron los dos se cambian por paquetes nuevos del mismo tema.
+// Los que nadie (o solo uno) ha respondido se quedan igual. Un paquete nuevo que ya tocaron no se mueve.
+function armarTemas() {
+  const tocado = (p) => S.estado.has(p.id);
+  const listo = (p) => S.estado.get(p.id)?.size === 2;
+  S.data.temas = S.base.temas.map((t) => {
+    const pool = (S.base.nuevas?.[t.id] || []).slice();
+    const usados = pool.filter(tocado), libres = pool.filter((p) => !tocado(p));
+    const quedan = [], salen = [];
+    for (const p of t.paquetes) (listo(p) ? salen : quedan).push(p);
+    const cupo = Math.max(salen.length, usados.length);
+    const nuevos = [...usados, ...libres].slice(0, cupo);
+    const sinCambio = salen.slice(nuevos.length); // si se acaban los nuevos, el viejo se queda
+    return { ...t, paquetes: [...nuevos, ...quedan, ...sinCambio] };
+  });
+  for (const t of S.data.temas) for (const p of t.paquetes) { S.paquetes.set(p.id, p); S.temaDe.set(p.id, t); }
 }
 const respondio = (pid, j) => S.estado.get(pid)?.has(j) || false;
 function situacion(pid) {
@@ -87,6 +106,9 @@ const rutas = [
   [/^#\/tipo\/(.+)$/, (tipo) => vistaLista({ tipo })],
   [/^#\/jugar\/(.+)$/, (id) => vistaJugar(id)],
   [/^#\/resultado\/(.+)$/, (id) => vistaResultado(id)],
+  [/^#\/conoces\/jugar\/(.+)$/, (id) => M.vistaJugar(id)],
+  [/^#\/conoces\/resultado\/(.+)$/, (id) => M.vistaResultado(id)],
+  [/^#\/conoces$/, () => M.vistaLista()],
   [/^#\/ajustes$/, () => vistaAjustes()],
   [/^#\/preguntas$/, () => vistaHome()],
   [/^#\/planes$/, () => R.vistaPlanes()],
@@ -384,6 +406,13 @@ const R = crearRincon({
   info: () => S.info,
   cambiarJugador: () => { S.info = be.cambiarJugador(); render(); },
   pendientesQuiz: () => (S.data ? paquetesVisibles().filter((p) => situacion(p.id) === "tuturno").length : 0),
+  resumenConoces: () => M.resumen(),
+});
+
+// ---------- "¿Me conoces?" (js/conoces.js) ----------
+const M = crearConoces({
+  app, be, esc, toast, ir, nombre, yo, otro, avatar, respondio, situacion, refrescarEstado,
+  data: () => S.data, info: () => S.info,
 });
 
 // ---------- ajustes ----------
@@ -414,6 +443,8 @@ async function arrancar() {
   try {
     const res = await fetch("data/preguntas.json", { cache: "no-cache" });
     S.data = await res.json();
+    S.base = { temas: S.data.temas, nuevas: S.data.nuevas };
+    armarTemas();
     for (const t of S.data.temas) for (const p of t.paquetes) { S.paquetes.set(p.id, p); S.temaDe.set(p.id, t); }
     S.info = await be.init();
     if (S.info) await refrescarEstado();
@@ -427,7 +458,7 @@ async function arrancar() {
   // El reloj de la diaria y la actualización automática
   setInterval(() => { const r = document.getElementById("reloj"); if (r) r.textContent = faltaParaMedianoche(); }, 1000);
   const actualizar = async () => {
-    if (!S.info || document.hidden || location.hash.startsWith("#/jugar")) return;
+    if (!S.info || document.hidden || location.hash.startsWith("#/jugar") || M.jugando(location.hash)) return;
     if (R.esSuya(location.hash)) return R.actualizar();
     const foto = () => JSON.stringify([S.info?.miembros, [...S.estado].map(([k, v]) => [k, [...v]])]);
     const antes = foto();
@@ -435,7 +466,7 @@ async function arrancar() {
       if (!parejaCompleta()) S.info = (await be.info()) || S.info;
       await refrescarEstado();
     } catch { return; }
-    if (antes !== foto() && /^#\/(preguntas|tema|tipo|resultado)/.test(location.hash)) render();
+    if (antes !== foto() && /^#\/(preguntas|tema|tipo|resultado|conoces)/.test(location.hash)) render();
   };
   setInterval(actualizar, 15000);
   document.addEventListener("visibilitychange", () => { if (!document.hidden) actualizar(); });
